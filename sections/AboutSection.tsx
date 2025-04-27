@@ -31,9 +31,9 @@ export default function AboutSection() {
     ];
 
     const images = [
-        "/hero1.jpg",
-        "/hero2.jpg",
-        "/hero3.jpg",
+        "/about1.jpg",
+        "/about2.jpg",
+        "/about3.jpg",
     ];
 
     const [currentImage, setCurrentImage] = useState(0);
