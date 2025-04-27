@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 
 export default function ContactSection() {
     return (
-        <section className="container mx-auto py-16 px-4">
+        <section id='contact' className="container mx-auto py-16 px-4">
             <div className="grid grid-cols-6 gap-8 items-center">
                 {/* Right Side (Arabic Text) - 4 columns on md+ screens */}
                 <motion.div 
@@ -89,7 +89,7 @@ export default function ContactSection() {
                                     <Mail className="text-[#123458]" size={24} />
                                 </motion.div>
                                 <h4 className="text-[#030303] font-medium mb-2">البريد الإلكتروني</h4>
-                                <p className="text-[#030303]/80 text-sm">architecture.saf@gmail.com</p>
+                                <span className="text-[#030303]/80 text-sm w-fit">architecture.saf@gmail.com</span>
                             </div>
                         </motion.div>
                     </div>

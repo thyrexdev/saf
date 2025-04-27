@@ -103,31 +103,24 @@ export default function Footer() {
                         </ul>
                     </motion.div>
 
-                    {/* Newsletter */}
+                    {/* Google Maps */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.3 }}
+                        className="w-full h-[300px] rounded-xl overflow-hidden shadow-lg"
                     >
-                        <h4 className="text-lg font-semibold text-[#030303] mb-4">اشترك في النشرة البريدية</h4>
-                        <p className="text-[#030303]/80 mb-4">
-                            اشترك للحصول على آخر أخبارنا وعروضنا الخاصة
-                        </p>
-                        <form className="space-y-3">
-                            <input
-                                type="email"
-                                placeholder="بريدك الإلكتروني"
-                                className="w-full px-4 py-2 rounded-full border border-[#D4C9BE] focus:outline-none focus:border-[#123458] transition-colors duration-300"
-                            />
-                            <motion.button
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="w-full px-4 py-2 bg-[#123458] text-white rounded-full hover:bg-[#123458]/90 transition-colors duration-300"
-                            >
-                                اشتراك
-                            </motion.button>
-                        </form>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3622.7538336289062!2d46.688632999999996!3d24.769627999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDQ2JzEwLjciTiA0NsKwNDEnMTkuMSJF!5e0!3m2!1sen!2seg!4v1745584528467!5m2!1sen!2seg"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            className="rounded-xl"
+                        />
                     </motion.div>
                 </div>
 

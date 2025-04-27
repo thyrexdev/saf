@@ -1,8 +1,12 @@
 "use client"
 import { motion } from 'framer-motion';
 import { Award, Users, Clock, Target } from 'lucide-react';
+import { useState, useEffect } from "react";
+
+
 
 export default function AboutSection() {
+    
     const stats = [
         {
             icon: <Award className="text-[#123458]" size={24} />,
@@ -26,8 +30,24 @@ export default function AboutSection() {
         }
     ];
 
+    const images = [
+        "/hero1.jpg",
+        "/hero2.jpg",
+        "/hero3.jpg",
+    ];
+
+    const [currentImage, setCurrentImage] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImage((prev) => (prev + 1) % images.length);
+        }, 4000); // change every 3 seconds
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
-        <section className="container mx-auto py-24 px-4">
+        <section id='about' className="container mx-auto py-24 px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Left Side - Image and Stats */}
                 <motion.div
@@ -37,10 +57,23 @@ export default function AboutSection() {
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     className="relative"
                 >
-                    <div className="relative h-[500px] w-full rounded-2xl overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#123458]/20 to-transparent" />
-                        <div className="absolute inset-0 backdrop-blur-sm bg-white/10" />
-                    </div>
+<div className="relative h-[500px] w-full rounded-2xl overflow-hidden">
+    {images.map((img, index) => (
+        <motion.img 
+            key={index}
+            src={img}
+            alt={`Slideshow Image ${index}`}
+            className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ 
+                opacity: index === currentImage ? 1 : 0, 
+                scale: index === currentImage ? 1 : 1.05 
+            }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+        />
+    ))}
+
+</div>
 
                     <div className="grid grid-cols-2 gap-4 mt-8">
                         {stats.map((stat, index) => (

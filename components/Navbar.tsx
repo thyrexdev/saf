@@ -6,10 +6,10 @@ import Image from "next/image"
 export default function Navbar() {
     const links = [
         { href: "#", label: "الرئيسية" },
-        { href: "#", label: "من نحن" },
-        { href: "#", label: "خدماتنا" },
-        { href: "#", label: "أعمالنا" },
-        { href: "#", label: "تواصل معنا" },
+        { href: "#about", label: "من نحن" },
+        { href: "#services", label: "خدماتنا" },
+        { href: "#projects", label: "أعمالنا" },
+        { href: "#contact", label: "تواصل معنا" },
     ]
 
     return (

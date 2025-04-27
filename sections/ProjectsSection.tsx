@@ -28,7 +28,7 @@ export default function ProjectsSection() {
     ];
 
     return (
-        <section className="container mx-auto py-24 px-4">
+        <section id='projects' className="container mx-auto py-24 px-4">
             <div className="text-center mb-16">
                 <motion.h2 
                     initial={{ opacity: 0, y: 20 }}
